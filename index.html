@@ -1,14 +1,16 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f2f2f2;
+            background-color: #ffffff;
             background: url('background.png') no-repeat center center fixed;
             background-size: cover;
             display: flex;
@@ -30,7 +32,10 @@
         h1 {
             margin-top: 0;
             color: #000; /* Change text color to black */
+            transition: color 0.3s ease, text-shadow 0.3s ease; /* Add transition for smooth animation */
         }
+        
+        
         .profile-section {
             display: flex;
             justify-content: center;
@@ -47,6 +52,11 @@
             overflow: hidden;
             border: 5px solid rgba(0, 123, 255, 0.2); /* Semi-transparent blue */
             backdrop-filter: blur(5px); /* Apply a blur effect */
+            transition: border-color 0.3s ease, transform 0.3s ease; /* Add transition for smooth animation */
+        }
+        .profile-picture:hover {
+            border-color: rgba(0, 123, 255, 0.5); /* Darker blue on hover */
+            transform: scale(1.05); /* Scale up slightly on hover */
         }
         .profile-picture img {
             display: block;
@@ -75,6 +85,7 @@
             height: 40px;
             line-height: 40px;
             text-align: center;
+            transition: transform 0.3s ease; /* Add transition for smooth animation */
         }
         .social-icon i {
             position: absolute;
@@ -106,6 +117,19 @@
         .social-icon:hover .social-label {
             display: block;
         }
+        /* Add animation for social icons */
+        .social-icon:nth-child(odd) {
+            transform: translateY(-20px); /* Move up */
+        }
+        .social-icon:nth-child(even) {
+            transform: translateY(20px); /* Move down */
+        }
+        .social-icon:hover {
+            transform: translateY(-10px); /* Move up slightly on hover */
+        }
+        .social-icon:hover + .social-icon {
+            transform: translateY(10px); /* Move down slightly on hover */
+        }
 
         /* Media query for smaller screens */
         @media (max-width: 600px) {
@@ -124,7 +148,7 @@
                     <span class="profile-label">Kaung Khant Ko</span>
                 </div>
             </div>
-            <h1>Mg Kaung Khant Ko</h1>
+            <h1>Kaung Khant Ko</h1>
             <div class="profile-section">
                 <div class="social-icon">
                     <a href="https://www.facebook.com/kaungk.khant.90?mibextid=LQQJ4d" target="_blank">
@@ -149,4 +173,5 @@
     </div>
 
 
-</body></html>
+</body>
+</html>
